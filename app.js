@@ -64,8 +64,7 @@ const checkWin = () => {}
             e.target.className = 'chosen';
             const checked = checkLetter(e.target.textContent);
             if (!checked) { //meaning checked holds no value (null)
-                missed ++
-
+                missed ++;
             }
         }
     });
