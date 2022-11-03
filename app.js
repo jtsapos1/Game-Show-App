@@ -53,11 +53,13 @@ const checkLetter = button => {
 
 //check if the game has been won or lost
 const checkWin = () => {}
+
+
+
+//listen for the onscreen keyboard to be clicked
     qwerty.addEventListener('click', (e) => {
         if (e.target.tagName === 'BUTTON' && e.target.className !== 'chosen') {
             e.target.className = 'chosen';
             const checked = checkLetter(e.target.textContent);
-
-
         }
     });
