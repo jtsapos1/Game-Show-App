@@ -52,12 +52,12 @@ const checkLetter = button => {
     }
 
 //check if the game has been won or lost
-const checkWin = () => {
+const checkWin = () => {}
     qwerty.addEventListener('click', (e) => {
-        if (e.target.) {
+        if (e.target.tagName === 'BUTTON' && e.target.className !== 'chosen') {
+            e.target.className = 'chosen';
+            const checked = checkLetter(e.target.textContent);
+
 
         }
-
-    }
-}
-
+    });
