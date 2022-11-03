@@ -29,10 +29,10 @@ function addPhraseToDisplay(arr) {
     const li = document.createElement('li');//creates the li.
     li.textContent = arr[i]; //puts the character inside the li.
     ul.appendChild(li);//append the li to the #phrase ul.
-    if (arr[i] !== '') {
+    if (arr[i] !== ' ') {
         li.className = 'letter';
     } else {
-        li.classname = 'space';
+        li.className = 'space';
     }
   }
 }
@@ -40,23 +40,24 @@ function addPhraseToDisplay(arr) {
 const phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray);
 
-// //check if letter is in the phrase
-// const checkLetter = button => {
-//     const checkLetter = document.querySelectorAll('li');
-//     const match = null;
-//     for (let i = 0; i < checkLetter.length; i++);
-//         if (checkLetter[i].textContent === button) {
-//             checkLetter[i].classList.add('show');
-//             match = button;
-//         }
-//     }
+//check if letter is in the phrase
+const checkLetter = button => {
+    const checkLetter = document.querySelectorAll('li');
+    const match = null;
+    for (let i = 0; i < checkLetter.length; i++);
+        if (checkLetter[i].textContent === button) {
+            checkLetter[i].classList.add('show');
+            match = button;
+        }
+    }
 
-// //check if the game has been won or lost
-// const checkWin = () => {
-//     qwerty.addEventListener('click', (e) => {
-//         if (e.target.) {
+//check if the game has been won or lost
+const checkWin = () => {
+    qwerty.addEventListener('click', (e) => {
+        if (e.target.) {
 
-//         }
+        }
 
-//     }
+    }
+}
 
