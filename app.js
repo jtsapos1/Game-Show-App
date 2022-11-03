@@ -43,13 +43,15 @@ addPhraseToDisplay(phraseArray);
 //check if letter is in the phrase
 const checkLetter = button => {
     const checkLetter = document.querySelectorAll('li');
-    const match = null;
-    for (let i = 0; i < checkLetter.length; i++);
+    let match = null;
+    for (let i = 0; i < checkLetter.length; i++) {
         if (checkLetter[i].textContent === button) {
             checkLetter[i].classList.add('show');
             match = button;
+            return match;
         }
     }
+}
 
 //check if the game has been won or lost
 const checkWin = () => {}
@@ -61,5 +63,9 @@ const checkWin = () => {}
         if (e.target.tagName === 'BUTTON' && e.target.className !== 'chosen') {
             e.target.className = 'chosen';
             const checked = checkLetter(e.target.textContent);
+            if (!checked) { //meaning checked holds no value (null)
+                missed ++
+
+            }
         }
     });
