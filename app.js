@@ -1,7 +1,7 @@
 const qwerty = document.getElementById ('qwerty');
 const phrase = document.getElementById ('phrase');
 const overlay = document.getElementById ('overlay');
-const ul = document.getElementById ('#phrase ul');
+const ul = phrase.firstElementChild;
 const resetButton = document.querySelector ('.btn__reset');
 let missed = 0;
 
@@ -37,19 +37,19 @@ function addPhraseToDisplay(arr) {
   }
 }
 
-// const phraseArray = getRandomPhraseAsArray(phrases);
-// addPhraseToDisplay(phraseArray);
+const phraseArray = getRandomPhraseAsArray(phrases);
+addPhraseToDisplay(phraseArray);
 
-// //check if letter is in the phrase
-// const checkLetter = button => {
-//     const checkLetter = document.querySelectorAll('li');
-//     const match = null;
-//     for (let i = 0; i < checkLetter.length; i++);
-//         if (checkLetter[i].textContent === button) {
-//             checkLetter[i].classList.add('show');
-//             match = button;
-//         }
-//     }
+//check if letter is in the phrase
+const checkLetter = button => {
+    const checkLetter = document.querySelectorAll('li');
+    const match = null;
+    for (let i = 0; i < checkLetter.length; i++);
+        if (checkLetter[i].textContent === button) {
+            checkLetter[i].classList.add('show');
+            match = button;
+        }
+    }
 
 // //check if the game has been won or lost
 // const checkWin = () => {
