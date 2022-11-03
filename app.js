@@ -49,6 +49,14 @@ const checkLetter = button => {
         }
 
 //check if the game has been won or lost
+const checkWin = () => {
+    qwerty.addEventListener('click', (e) => {
+        if (e.target.) {
+
+        }
+
+    });
+}
 
 } 
 
