@@ -44,15 +44,15 @@ const checkLetter = button => {
         if (checkLetter[i].textContent === button) {
             checkLetter[i].classList.add('show');
             match = button;
-            return match;
         }
-    }
+    } 
+    return match;
 }
 
 //check if the game has been won or lost
 const checkWin = () => {
     const letter = document.querySelectorAll('.letter');
-    const show = document.querySelectorAll('show');
+    const show = document.querySelectorAll('.show');
     if (letter.length === show.length) {
         overlay.classList.add('win');
         overlay.title.textContent('You Won!');
