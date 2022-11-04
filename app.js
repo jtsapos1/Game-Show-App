@@ -71,6 +71,26 @@ const checkWin = () => {
 //Listen for the start game button to be pressed
 resetButton.addEventListener('click', () => {
     overlay.style.display = 'none';
+    function startOver () {
+        for (let i = 0; hearts.length; i++) {
+            hearts[i].src = 'images/liveheart.png';
+        }
+        for (let i = 0; i < newButton.length; i++) {
+            newButton[i].remove('chosen');
+            newButton[i].disabled = false;
+        }
+
+        function removePhrase() {
+            ul.replaceChildren();
+        }
+
+        removePhrase();
+        startOver();
+        fiveHearts();
+        missed = 0;
+        overlay.style.display = 'none';
+        getRandomPhraseAsArray(phrases);
+    }
 });  
 
 
@@ -98,27 +118,30 @@ resetButton.addEventListener('click', () => {
         overlay.style.display = 'flex';
     }
     
-    function resetGame() {
-        function fiveHearts() {
-            for (let i = 0; hearts.length; i++) {
-                hearts[i].src = 'images/liveheart.png';
-            }
-        }
-    }
-    function startOver () {
-        for (let i = 0; i < newButton.length; i++) {
-            newButton[i].remove('chosen');
-            newButton[i].disabled = false;
-        }
+    // function resetGame() {
+    //     function fiveHearts() {
+    //         for (let i = 0; hearts.length; i++) {
+    //             hearts[i].src = 'images/liveheart.png';
+    //         }
+    //     }
+    // }
+    // function startOver () {
+    //     for (let i = 0; hearts.length; i++) {
+    //         hearts[i].src = 'images/liveheart.png';
+    //     }
+    //     for (let i = 0; i < newButton.length; i++) {
+    //         newButton[i].remove('chosen');
+    //         newButton[i].disabled = false;
+    //     }
 
-        function removePhrase() {
-            ul.replaceChildren();
-        }
+    //     function removePhrase() {
+    //         ul.replaceChildren();
+    //     }
 
-        removePhrase();
-        startOver();
-        fiveHearts();
-        missed = 0;
-        overlay.style.display = 'none';
-        getRandomPhraseAsArray(phrases);
-    }
+    //     removePhrase();
+    //     startOver();
+    //     fiveHearts();
+    //     missed = 0;
+    //     overlay.style.display = 'none';
+    //     getRandomPhraseAsArray(phrases);
+    // }
