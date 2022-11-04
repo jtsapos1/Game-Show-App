@@ -108,7 +108,7 @@ resetButton.addEventListener('click', () => {
     // }
     function startOver() {
         for (let i = 0; hearts.length; i++) {
-            hearts[i].src = 'images/liveheart.png';
+            hearts[i].src = 'images/liveHeart.png';
         }
         for (let i = 0; i < newButton.length; i++) {
             newButton[i].remove('chosen');
