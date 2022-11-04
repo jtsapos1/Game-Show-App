@@ -14,10 +14,6 @@ const phrases = [
     'bill of rights'
 ];
 
-resetButton.addEventListener('click', () => {
-    overlay.style.display = 'none';
-});  
-
 //return a random phrase from an array
 function getRandomPhraseAsArray(arr) {
     const randomNumber = arr[Math.floor(Math.random() * arr.length)];
@@ -37,7 +33,6 @@ function addPhraseToDisplay(arr) {
     }
   }
 }
-
 const phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray);
 
@@ -68,9 +63,13 @@ const checkWin = () => {
         overlay.classList.textContent('You Lost!');
         overlay.style.display = 'flex';
     }
-
-    
+   
 }
+
+//Listen for the start game button to be pressed
+resetButton.addEventListener('click', () => {
+    overlay.style.display = 'none';
+});  
 
 
 //listen for the onscreen keyboard to be clicked
