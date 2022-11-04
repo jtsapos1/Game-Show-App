@@ -59,11 +59,18 @@ const checkWin = () => {
     const letter = document.querySelectorAll('.letter');
     const show = document.querySelectorAll('show');
     if (letter.length === show.length) {
-        
-
+        overlay.classList.add('win');
+        overlay.title.textContent('You Won!');
+        overlay.style.display = 'flex';
+    } else if (missed > 4) {
+        overlay.style.display = ('lose');
+        overlay.classList.add('lose');
+        overlay.classList.textContent('You Lost!');
+        overlay.style.display = 'flex';
     }
-}
 
+    
+}
 
 
 //listen for the onscreen keyboard to be clicked
@@ -72,8 +79,9 @@ const checkWin = () => {
             e.target.className = 'chosen';
             const checked = checkLetter(e.target.textContent);
             if (!checked) { //meaning checked holds no value (null)
-                hearts(missed -1).src = "images/lostHeart.png";
                 missed ++;
+                hearts[missed -1].src = "images/lostHeart.png";
+                
             }
         }
     });
