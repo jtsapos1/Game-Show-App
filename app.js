@@ -53,6 +53,7 @@ const checkLetter = button => {
 const checkWin = () => {
     const letter = document.querySelectorAll('.letter');
     const show = document.querySelectorAll('.show');
+    const title = document.querySelector('.title');
     if (letter.length === show.length) {
         overlay.classList.add('win');
         overlay.title.textContent('You Won!');
@@ -60,7 +61,7 @@ const checkWin = () => {
     } else if (missed > 4) {
         overlay.style.display = ('lose');
         overlay.classList.add('lose');
-        overlay.classList.textContent('You Lost!');
+        overlay.title.textContent('You Lost!');
         overlay.style.display = 'flex';
     }
    
@@ -81,5 +82,6 @@ resetButton.addEventListener('click', () => {
                 missed ++;
                 hearts[missed -1].src = "images/lostHeart.png";
             }
-        }
+        } 
+        return checkWin();
     });
