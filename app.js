@@ -87,7 +87,8 @@ resetButton.addEventListener('click', () => {
         return checkWin();
     });
 
-    function changeOverlay(overlayClassNew, h2TextNew, newBtnClass) { //change overlay class and h2 text
+    //change overlay class and h2 text
+    function changeOverlay(overlayClassNew, h2TextNew, newBtnClass) { 
         overlay.className = overlayClassNew;
         h2.innerHtml = h2TextNew;
         //change button class/text
