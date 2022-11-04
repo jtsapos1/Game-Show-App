@@ -4,6 +4,7 @@ const overlay = document.getElementById ('overlay');
 const ul = phrase.firstElementChild;
 const hearts = document.querySelectorAll ('.tries img');
 const resetButton = document.querySelector ('.btn__reset');
+const newButton = document.querySelectorAll('button');
 let missed = 0;
 
 const phrases = [
@@ -85,3 +86,38 @@ resetButton.addEventListener('click', () => {
         } 
         return checkWin();
     });
+
+    function changeOverlay(overlayClassNew, h2TextNew, newBtnClass) { //change overlay class and h2 text
+        overlay.className = overlayClassNew;
+        h2.innerHtml = h2TextNew;
+        //change button class/text
+        resetButton.className = newBtnClass;
+        resetButton.textContent = "Play It Again?";
+        //display screen
+        overlay.style.display = 'flex';
+    }
+    
+    function resetGame() {
+        function fiveHearts() {
+            for (let i = 0; hearts.length; i++) {
+                hearts[i].src = 'images/liveheart.png';
+            }
+        }
+    }
+    function startOver () {
+        for (let i = 0; i < newButton.length; i++) {
+            newButton[i].remove('chosen');
+            newButton[i].disabled = false;
+        }
+
+        function removePhrase() {
+            ul.replaceChildren();
+        }
+
+        removePhrase();
+        startOver();
+        fiveHearts();
+        missed = 0;
+        overlay.style.display = 'none';
+        getRandomPhraseAsArray(phrases);
+    }
