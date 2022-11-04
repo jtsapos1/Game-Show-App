@@ -2,6 +2,7 @@ const qwerty = document.getElementById ('qwerty');
 const phrase = document.getElementById ('phrase');
 const overlay = document.getElementById ('overlay');
 const ul = phrase.firstElementChild;
+const hearts = document.querySelectorAll ('.tries img');
 const resetButton = document.querySelector ('.btn__reset');
 let missed = 0;
 
@@ -54,7 +55,14 @@ const checkLetter = button => {
 }
 
 //check if the game has been won or lost
-const checkWin = () => {}
+const checkWin = () => {
+    const letter = document.querySelectorAll('.letter');
+    const show = document.querySelectorAll('show');
+    if (letter.length === show.length) {
+        
+
+    }
+}
 
 
 
@@ -64,6 +72,7 @@ const checkWin = () => {}
             e.target.className = 'chosen';
             const checked = checkLetter(e.target.textContent);
             if (!checked) { //meaning checked holds no value (null)
+                hearts(missed -1).src = "images/lostHeart.png";
                 missed ++;
             }
         }
