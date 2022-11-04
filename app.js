@@ -80,7 +80,6 @@ resetButton.addEventListener('click', () => {
             if (!checked) { //meaning checked holds no value (null)
                 missed ++;
                 hearts[missed -1].src = "images/lostHeart.png";
-                
             }
         }
     });
