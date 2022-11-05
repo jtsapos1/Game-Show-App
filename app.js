@@ -107,21 +107,21 @@ resetButton.addEventListener('click', () => {
     //     }
     // }
     function startOver() {
-        for (let i = 0; hearts.length; i++) {
+        for (let i = 0; i < hearts.length; i++) {
             hearts[i].src = 'images/liveHeart.png';
         }
         for (let i = 0; i < newButton.length; i++) {
-            newButton[i].remove('chosen');
+            newButton[i].classList.remove('chosen');
             newButton[i].disabled = false;
         }
-
+    
+        
         function removePhrase() {
             ul.replaceChildren();
         }
 
         removePhrase();
         startOver();
-        fiveHearts();
         missed = 0;
         overlay.style.display = 'none';
         getRandomPhraseAsArray(phrases);
