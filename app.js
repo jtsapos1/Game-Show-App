@@ -42,15 +42,15 @@ const checkLetter = button => {
     const checkLetter = document.querySelectorAll('li');
     let match = null;
     for (let i = 0; i < checkLetter.length; i++) {
-        /*Create a conditional that compares the text of the button parameter
-        to the text of the li at the current index of the loop*/ 
-        if (checkLetter[i].textContent === button) { 
-        /*If they match, add the "show" class to the li*/    
-            checkLetter[i].classList.add('show');
-        /*if they match, store the button text in the match variable.*/    
-            match = button;
-        }
-    } 
+		/*Create a conditional that compares the text of the button parameter
+		to the text of the li at the current index of the loop*/ 
+		if (checkLetter[i].textContent === button) { 
+		/*If they match, add the "show" class to the li*/    
+				checkLetter[i].classList.add('show');
+		/*if they match, store the button text in the match variable.*/    
+				match = button;
+		}
+  } 
     /*once the loop completes, return the match variable */
     return match;
 }
@@ -68,34 +68,41 @@ const checkWin = () => {
         title.textContent = 'You Won!';
     /*Change the display property of the overlay to 'flex' */    
         overlay.style.display = 'flex';
-    } else if (missed > 4) {
+    /*If the missed counter > 4, display the 'lose' overlay */    
+    } else if (missed > 4) {    
         overlay.style.display = ('lose');
+    /*create the 'lose' overlay by adding the 'lose' to the start overlay*/    
         overlay.classList.add('lose');
+    /*Change the headline text of the start overlay to show a person lost*/    
         title.textContent = 'You Lost!';
         overlay.style.display = 'flex';
     }
-   
 }
-
-//Listen for the start game button to be pressed
-resetButton.addEventListener('click', () => {
-    overlay.style.display = 'none';
-    startOver();
-});  
-
-
-//listen for the onscreen keyboard to be clicked
-    qwerty.addEventListener('click', (e) => {
-        if (e.target.tagName === 'BUTTON' && e.target.className !== 'chosen') {
-            e.target.className = 'chosen';
-            const checked = checkLetter(e.target.textContent);
-            if (!checked) { //meaning checked holds no value (null)
-                missed ++;
-                hearts[missed -1].src = "images/lostHeart.png";
-            }
-        } 
-        return checkWin();
-    });
+		//Listen for the start game button to be pressed
+		resetButton.addEventListener('click', () => {
+				overlay.style.display = 'none';
+				startOver();
+		});  
+				//Listen for the onscreen keyboard to be clicked
+				/*Start by creating an event listener for the qwerty element that listens for the
+				“click” event*/
+		qwerty.addEventListener('click', (e) => {
+				/*Use a conditional to filter out clicks that don’t happen on the buttons or if the
+				button already has the “chosen” class*/        
+		if (e.target.tagName === 'BUTTON' && e.target.className !== 'chosen') {
+					//Add the “chosen” class to the button that was pressed.
+				e.target.className = 'chosen';
+				//Call the checkLetter function and store the results in a variable.
+				const checked = checkLetter(e.target.textContent);
+				/*If the checkLetter function does not find a letter, 
+				remove one of the heart images and increment the missed counter */
+				if (!checked) { //meaning checked holds no value (null)
+						missed ++;
+						hearts[missed -1].src = "images/lostHeart.png";
+				}
+		} 
+		return checkWin();
+});
 
     //change overlay class and h2 text
     function changeOverlay(overlayClassNew, h2TextNew, newBtnClass) { 
