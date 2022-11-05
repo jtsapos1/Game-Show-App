@@ -104,16 +104,16 @@ const checkWin = () => {
 		return checkWin();
 });
 
-    //change overlay class and h2 text
-    function changeOverlay(overlayClassNew, h2TextNew, newBtnClass) { 
-        overlay.className = overlayClassNew;
-        h2.innerHtml = h2TextNew;
-        //change button class/text
-        resetButton.className = newBtnClass;
-        resetButton.textContent = "Play It Again?";
-        //display screen
-        overlay.style.display = 'flex';
-    }
+    // //change overlay class and h2 text
+    // function changeOverlay(overlayClassNew, h2TextNew, newBtnClass) { 
+    //     overlay.className = overlayClassNew;
+    //     h2.innerHtml = h2TextNew;
+    //     //change button class/text
+    //     resetButton.className = newBtnClass;
+    //     resetButton.textContent = "Play It Again?";
+    //     //display screen
+    //     overlay.style.display = 'flex';
+    // }
 
     //reset gameboard
     function startOver() {
