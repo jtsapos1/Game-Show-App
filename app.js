@@ -42,11 +42,16 @@ const checkLetter = button => {
     const checkLetter = document.querySelectorAll('li');
     let match = null;
     for (let i = 0; i < checkLetter.length; i++) {
-        if (checkLetter[i].textContent === button) {
+        /*Create a conditional that compares the text of the button parameter
+        to the text of the li at the current index of the loop*/ 
+        if (checkLetter[i].textContent === button) { 
+        /*If they match, add the "show" class to the li*/    
             checkLetter[i].classList.add('show');
+        /*if they match, store the button text in the match variable.*/    
             match = button;
         }
     } 
+    /*once the loop completes, return the match variable */
     return match;
 }
 
@@ -55,17 +60,19 @@ const checkWin = () => {
     const letter = document.querySelectorAll('.letter');
     const show = document.querySelectorAll('.show');
     const title = document.querySelector('.title');
+    /*Check if the length of the 2 variables are the same */
     if (letter.length === show.length) {
+    /*If the they are the same, create the 'win' class to start the overlay*/    
         overlay.classList.add('win');
+    /*Change the headline text of the start overlay to show a person won*/    
         title.textContent = 'You Won!';
+    /*Change the display property of the overlay to 'flex' */    
         overlay.style.display = 'flex';
-        //startOver();
     } else if (missed > 4) {
         overlay.style.display = ('lose');
         overlay.classList.add('lose');
         title.textContent = 'You Lost!';
         overlay.style.display = 'flex';
-        //startOver();
     }
    
 }
