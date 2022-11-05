@@ -114,8 +114,7 @@ resetButton.addEventListener('click', () => {
             newButton[i].classList.remove('chosen');
             newButton[i].disabled = false;
         }
-    
-        
+            
         function removePhrase() {
             ul.replaceChildren();
         }
