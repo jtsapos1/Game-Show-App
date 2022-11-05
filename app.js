@@ -18,7 +18,7 @@ const phrases = [
 //return a random phrase from an array
 function getRandomPhraseAsArray(arr) {
     const randomNumber = arr[Math.floor(Math.random() * arr.length)];
-    return randomNumber;
+    return randomNumber.split('');
 }
 
 //add the letters of a string to the display
