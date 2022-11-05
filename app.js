@@ -59,11 +59,13 @@ const checkWin = () => {
         overlay.classList.add('win');
         title.textContent = 'You Won!';
         overlay.style.display = 'flex';
+        //startOver();
     } else if (missed > 4) {
         overlay.style.display = ('lose');
         overlay.classList.add('lose');
         title.textContent = 'You Lost!';
         overlay.style.display = 'flex';
+        //startOver();
     }
    
 }
@@ -71,7 +73,7 @@ const checkWin = () => {
 //Listen for the start game button to be pressed
 resetButton.addEventListener('click', () => {
     overlay.style.display = 'none';
-    //startOver();
+    startOver();
 });  
 
 
@@ -88,38 +90,36 @@ resetButton.addEventListener('click', () => {
         return checkWin();
     });
 
-    // //change overlay class and h2 text
-    // function changeOverlay(overlayClassNew, h2TextNew, newBtnClass) { 
-    //     overlay.className = overlayClassNew;
-    //     h2.innerHtml = h2TextNew;
-    //     //change button class/text
-    //     resetButton.className = newBtnClass;
-    //     resetButton.textContent = "Play It Again?";
-    //     //display screen
-    //     overlay.style.display = 'flex';
-    // }
-    
-    
-    // function startOver() {
-    //     for (let i = 0; i < hearts.length; i++) {
-    //         hearts[i].src = 'images/liveHeart.png';
-    //     }
-    //     for (let i = 0; i < newButton.length; i++) {
-    //         newButton[i].classList.remove('chosen');
-    //         newButton[i].disabled = false;
-    //     }
+    //change overlay class and h2 text
+    function changeOverlay(overlayClassNew, h2TextNew, newBtnClass) { 
+        overlay.className = overlayClassNew;
+        h2.innerHtml = h2TextNew;
+        //change button class/text
+        resetButton.className = newBtnClass;
+        resetButton.textContent = "Play It Again?";
+        //display screen
+        overlay.style.display = 'flex';
+    }
+
+    //reset gameboard
+    function startOver() {
+        for (let i = 0; i < hearts.length; i++) {
+            hearts[i].src = 'images/liveHeart.png';
+        }
+        for (let i = 0; i < newButton.length; i++) {
+            newButton[i].classList.remove('chosen');
+            newButton[i].disabled = false;
+        }
             
-    //     function removePhrase() {
-    //         ul.replaceChildren();
-    //     }
+        function removePhrase() {
+            ul.replaceChildren();
+        }
 
-    //     removePhrase();
-    //     startOver();
-    //     missed = 0;
-    //     overlay.style.display = 'none';
-    //     getRandomPhraseAsArray(phrases);
-    // }
-
+        removePhrase();
+        missed = 0;
+        const newPhrase = getRandomPhraseAsArray(phrases);
+        addPhraseToDisplay(newPhrase);
+    }
 
 
 
@@ -170,7 +170,8 @@ resetButton.addEventListener('click', () => {
 
 
 
-    
+
+
     // // function resetGame() {
     // //     function fiveHearts() {
     // //         for (let i = 0; hearts.length; i++) {
