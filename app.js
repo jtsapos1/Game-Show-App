@@ -119,3 +119,62 @@ resetButton.addEventListener('click', () => {
     //     overlay.style.display = 'none';
     //     getRandomPhraseAsArray(phrases);
     // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    // // function resetGame() {
+    // //     function fiveHearts() {
+    // //         for (let i = 0; hearts.length; i++) {
+    // //             hearts[i].src = 'images/liveheart.png';
+    // //         }
+    // //     }
+    // // }
