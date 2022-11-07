@@ -67,6 +67,7 @@ const checkWin = () => {
 				overlay.classList.remove('lose');
     /*Change the headline text of the start overlay to show a person won*/    
         title.textContent = 'You Won!';
+				resetButton.textContent = "Play Again?";
     /*Change the display property of the overlay to 'flex' */    
         overlay.style.display = 'flex';
     /*If the missed counter > 4, display the 'lose' overlay */    
@@ -77,6 +78,7 @@ const checkWin = () => {
 				overlay.classList.remove('win');
     /*Change the headline text of the start overlay to show a person lost*/    
         title.textContent = 'You Lost!';
+				resetButton.textContent = "Play Again?";
         overlay.style.display = 'flex';
     }
 }
