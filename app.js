@@ -64,6 +64,7 @@ const checkWin = () => {
     if (letter.length === show.length) {
     /*If the they are the same, create the 'win' class to start the overlay*/    
         overlay.classList.add('win');
+				overlay.classList.remove('lose');
     /*Change the headline text of the start overlay to show a person won*/    
         title.textContent = 'You Won!';
     /*Change the display property of the overlay to 'flex' */    
@@ -73,6 +74,7 @@ const checkWin = () => {
         overlay.style.display = ('lose');
     /*create the 'lose' overlay by adding the 'lose' to the start overlay*/    
         overlay.classList.add('lose');
+				overlay.classList.remove('win');
     /*Change the headline text of the start overlay to show a person lost*/    
         title.textContent = 'You Lost!';
         overlay.style.display = 'flex';
